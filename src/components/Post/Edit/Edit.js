@@ -7,7 +7,7 @@ import './Edit.css';
 export default class Edit extends Component {
   constructor( props ) {
     super( props );
-
+    console.log(props)
     this.state = {
       text: props.text
     };
@@ -20,7 +20,8 @@ export default class Edit extends Component {
   }
 
   updatePost() {
-
+    this.props.updatePostFn(this.props.id, this.state.text)
+    this.props.hideEdit()
   }
 
   render() {
